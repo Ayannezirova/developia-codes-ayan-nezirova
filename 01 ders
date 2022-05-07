@@ -1,0 +1,13 @@
+jshell> int eded1=0;
+eded1 ==> 0
+
+jshell> int eded2=0;
+eded2 ==> 0
+
+jshell> for(int s=1;s<=10;s++){eded1++;eded2+=eded1;}
+
+jshell> eded2
+eded2 ==> 55
+
+jshell> eded1
+eded1 ==> 10
