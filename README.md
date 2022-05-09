@@ -1,2 +1,0 @@
-# developia-codes-ayan-nezirova
- 
