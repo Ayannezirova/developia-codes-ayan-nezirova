@@ -3,15 +3,12 @@ package giris1;
 public class ucuncuderscalisma2 {
 
 	public static void main(String[] args) {
-		
-		int eded=9;
-		boolean sade=true; 
-		for (int i = 2; i <= eded-1; i++) {
-	    if (eded % i == 0) {
-		    	sade=false;
-		      
-		    }
-	}
-		  System.out.println(sade);
+		 int b=36;
+		 int b1=3;
+		 int b2=6;
+		 while(b1<b2) {
+		 
+		 }
+		 System.out.println(b2);
 }
 }
