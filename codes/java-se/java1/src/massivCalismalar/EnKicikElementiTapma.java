@@ -26,7 +26,7 @@ public class EnKicikElementiTapma {
 			}
 			saygac++;
 		}
-		for (int i = 0; i < 5; i++)
-			System.out.println(numbers[i]);
+		for (int i = 0; i < 1; i++)
+			System.out.println(numbers[4]);
 	}
 }
