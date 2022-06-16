@@ -2,41 +2,51 @@ package giris1;
 
 public class calisma1 {
 
-        1-ci ders calisma 1:
-        	
-		jshell> int e1=0;
-		e1 ==> 0
+	// 1-ci ders calisma 1:
 
-		jshell> int e2=0;
-		e2 ==> 0
+	jshell>
+	int e1 = 0;e1==>0
 
-		jshell> for(int j=1;j<=10;j++){e1++;e2+=e1;}
+	jshell>
+	int e2 = 0;e2==>0
 
-		jshell> e2
-		e2 ==> 55
+	jshell>for(int j=1;j<=10;j++)
+	{
+		e1++;
+		e2 += e1;
+	}
 
-		jshell> e1
-		e1 ==> 10
-	    
-		evvelki ders misal 2:
-	    
-		jshell> int e1=0;
-		e1 ==> 0
+	jshell>
+	e2
+		e2==>55
 
-		jshell> int e2=0;
-		e2 ==> 0
+	jshell>
+	e1 e1==>10
 
-		jshell> for(int j=1;j<=20;j++){e1+=2;e2+=e1;}
+	evvelki ders misal 2:
 
-		jshell> e2
-		e2 ==> 420
-			
-		jshell> e1
-		e1 ==> 40
-		
-		2-ci ders calisma 1:
-			
-	    public static void main(String[] args) {
+	jshell>
+	int e1 = 0;e1==>0
+
+	jshell>
+	int e2 = 0;e2==>0
+
+	jshell>for(int j=1;j<=20;j++)
+	{
+		e1 += 2;
+		e2 += e1;
+}
+
+jshell>
+e2
+		e2==>420
+
+jshell>
+e1 e1==>40
+
+// 2-ci ders calisma 1:
+
+public static void main(String[] args) {
 			jshell> int e1=48;
 			e1 ==> 48
 
@@ -55,7 +65,7 @@ public class calisma1 {
 			jshell> System.out.println(e1+ "/" +e2+ "="+(e1/e2));
 			48/12=4
 			
-		calisma 2:
+		//calisma 2:
 			jshell> String sirket1="Nurgun Group"
 			sirket1 ==> "Nurgun Group"
 
@@ -74,7 +84,7 @@ public class calisma1 {
 			jshell> System.out.println(sirket1+", "+sirket2+", "+sirket3+", "+sirket4+", "+sirket5);
 			Nurgun Group, Pasha Holding, Gilan Holding, Synergy Group, Evsen Group
 		
-		calisma 3:
+		//calisma 3:
 			
 			jshell> String prg1="Python";
 			prg1 ==> "Python"
@@ -88,7 +98,7 @@ public class calisma1 {
 			jshell> System.out.println(prg1+","+prg2+","+prg3);
 			Python,Java,Assembler
 		
-		calisma 4:
+		//calisma 4:
 			
 			jshell> String name="Ayan";
 			name ==> "Ayan"
@@ -96,7 +106,7 @@ public class calisma1 {
 			jshell> System.out.println(name);
 			Ayan
 			
-		calisma 5:
+		//calisma 5:
 			
 			a) -9 + 2 * 6
 
