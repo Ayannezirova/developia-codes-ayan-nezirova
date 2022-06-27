@@ -1,4 +1,4 @@
-package evCalismalariVideoBaxmaq;
+package ders15Calismalar;
 
 public class exspressionVeStatement {
 
