@@ -3,6 +3,7 @@ package ders18calismalar;
 public class exceptionHandlingExample1 {
 	public static void main(String[] args) {
 
+		
 		//Hər hansı bir ədədi sıfıra bölsək, ArithmeticException yaranır.
 
 		try {
