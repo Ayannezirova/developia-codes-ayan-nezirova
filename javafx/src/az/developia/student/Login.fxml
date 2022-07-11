@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane minHeight="620.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="az.developia.student.BooksController">
+   <children>
+      <TextField layoutX="27.0" layoutY="63.0" minWidth="200.0" promptText="kitabın adını daxil edin.." />
+      <TextField layoutX="27.0" layoutY="102.0" minWidth="200.0" promptText="kitabın qiymətini daxil edin.." />
+      <Button layoutX="149.0" layoutY="139.0" mnemonicParsing="false" text="yadda saxla" />
+   </children>
+</AnchorPane>
