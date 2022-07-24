@@ -1,0 +1,42 @@
+mysql> select * from orders;
++----+--------+---------+--------+
+| id | name   | address | price  |
++----+--------+---------+--------+
+|  1 | Tural  | Baku    | 255.00 |
+|  2 | Aynur  | Seki    | 545.00 |
+|  3 | Hesen  | Samaxi  | 300.00 |
+|  4 | Kamal  | Baku    | 650.00 |
+|  5 | Sema   | Seki    | 420.00 |
+|  6 | Rauf   | Seki    | 155.00 |
+|  7 | Aydan  | Samaxi  | 435.00 |
+|  8 | Leyla  | Samaxi  | 225.00 |
+|  9 | Vuqar  | Baku    | 175.00 |
+| 10 | Zeyneb | Seki    | 520.00 |
+| 11 | Leyla  | Samaxi  | 125.00 |
+| 12 | Aydan  | Samaxi  | 250.00 |
+| 13 | Rauf   | Seki    | 500.00 |
+| 14 | Hesen  | Samaxi  | 340.00 |
+| 15 | Tural  | Baku    | 380.00 |
+| 16 | Vuqar  | Baku    | 670.00 |
+| 17 | Vuqar  | Baku    | 120.00 |
+| 18 | Zeyneb | Seki    | 470.00 |
+| 19 | Sema   | Seki    | 760.00 |
++----+--------+---------+--------+
+19 rows in set (0.00 sec)
+
+mysql> select name, sum(price) from orders group by name;
++--------+------------+
+| name   | sum(price) |
++--------+------------+
+| Tural  |     635.00 |
+| Aynur  |     545.00 |
+| Hesen  |     640.00 |
+| Kamal  |     650.00 |
+| Sema   |    1180.00 |
+| Rauf   |     655.00 |
+| Aydan  |     685.00 |
+| Leyla  |     350.00 |
+| Vuqar  |     965.00 |
+| Zeyneb |     990.00 |
++--------+------------+
+10 rows in set (0.00 sec)

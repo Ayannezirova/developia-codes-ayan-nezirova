@@ -1,0 +1,50 @@
+mysql> select * from orders;
++----+--------+---------+--------+
+| id | name   | address | price  |
++----+--------+---------+--------+
+|  1 | Tural  | Baku    | 255.00 |
+|  2 | Aynur  | Seki    | 545.00 |
+|  3 | Hesen  | Samaxi  | 300.00 |
+|  4 | Kamal  | Baku    | 650.00 |
+|  5 | Sema   | Seki    | 420.00 |
+|  6 | Rauf   | Seki    | 155.00 |
+|  7 | Aydan  | Samaxi  | 435.00 |
+|  8 | Leyla  | Samaxi  | 225.00 |
+|  9 | Vuqar  | Baku    | 175.00 |
+| 10 | Zeyneb | Seki    | 520.00 |
++----+--------+---------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select * from orders order by address desc;
++----+--------+---------+--------+
+| id | name   | address | price  |
++----+--------+---------+--------+
+|  2 | Aynur  | Seki    | 545.00 |
+|  5 | Sema   | Seki    | 420.00 |
+|  6 | Rauf   | Seki    | 155.00 |
+| 10 | Zeyneb | Seki    | 520.00 |
+|  3 | Hesen  | Samaxi  | 300.00 |
+|  7 | Aydan  | Samaxi  | 435.00 |
+|  8 | Leyla  | Samaxi  | 225.00 |
+|  1 | Tural  | Baku    | 255.00 |
+|  4 | Kamal  | Baku    | 650.00 |
+|  9 | Vuqar  | Baku    | 175.00 |
++----+--------+---------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select * from orders order by address asc;
++----+--------+---------+--------+
+| id | name   | address | price  |
++----+--------+---------+--------+
+|  1 | Tural  | Baku    | 255.00 |
+|  4 | Kamal  | Baku    | 650.00 |
+|  9 | Vuqar  | Baku    | 175.00 |
+|  3 | Hesen  | Samaxi  | 300.00 |
+|  7 | Aydan  | Samaxi  | 435.00 |
+|  8 | Leyla  | Samaxi  | 225.00 |
+|  2 | Aynur  | Seki    | 545.00 |
+|  5 | Sema   | Seki    | 420.00 |
+|  6 | Rauf   | Seki    | 155.00 |
+| 10 | Zeyneb | Seki    | 520.00 |
++----+--------+---------+--------+
+10 rows in set (0.00 sec)
