@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import az.developia.student.springdemo.esas_paket.components.Employee;
+
 @SpringBootApplication
 public class SpringdemoApplication {
 
@@ -11,9 +13,11 @@ public class SpringdemoApplication {
 		ApplicationContext p = SpringApplication.run(SpringdemoApplication.class, args);
 		Computer c = p.getBean(Computer.class);
 		System.out.println(c.brand);
-		
-		Computer c2 = p.getBean(Computer.class);
-		System.out.println(c2.speed);
+		System.out.println(c.speed);
+
+		ApplicationContext a = SpringApplication.run(SpringdemoApplication.class, args);
+		Employee emp = a.getBean(Employee.class);
+		emp.printInfo();
 
 	}
 
