@@ -44,6 +44,19 @@ public class MyArrayList<T> {
 		return s;
 	}
 
-	
+	public void remove(int indeks) {
+		if (indeks < 0) {
+			return;
+		}
+		if (indeks > index - 1) {
+			return;
+		}
+
+		for (int i = indeks; i < index - 1; i++) {
+			array[i] = array[i + 1];
+		}
+
+		index--;
+	}
 
 }

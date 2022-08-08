@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="600.0" minWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="az.developia.student.BooksController">
+   <children>
+      <TextField fx:id="nameText" layoutX="29.0" layoutY="51.0" prefHeight="30.0" prefWidth="138.0" promptText="kitab adını daxil et" />
+      <Button fx:id="Button" layoutX="393.0" layoutY="98.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="74.0" text="Qeydiyyat" />
+      <Label layoutX="29.0" layoutY="14.0" prefHeight="44.0" prefWidth="89.0" text="name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="priceText" layoutX="179.0" layoutY="51.0" prefHeight="30.0" prefWidth="138.0" promptText="kitab qiymətini daxil et" />
+      <TextField fx:id="descriptionText" layoutX="329.0" layoutY="51.0" prefHeight="30.0" prefWidth="138.0" promptText="kitab təsvirini daxil et" />
+      <Label layoutX="181.0" layoutY="26.0" prefHeight="21.0" prefWidth="52.0" text="price">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="329.0" layoutY="26.0" text="description">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TableView layoutX="18.0" layoutY="189.0" prefHeight="327.0" prefWidth="460.0">
+        <columns>
+          <TableColumn prefWidth="85.0" text="id" />
+          <TableColumn prefWidth="169.0" text="name" />
+            <TableColumn prefWidth="106.0" text="price" />
+            <TableColumn prefWidth="99.0" text="description" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

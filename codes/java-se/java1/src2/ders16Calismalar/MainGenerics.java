@@ -3,13 +3,18 @@ package ders16Calismalar;
 public class MainGenerics {
 
 	public static void main(String[] args) {
-		MyArrayList<Integer> list = new MyArrayList<Integer>(5, 4);
-		list.add(24);
-		list.add(13);
-		list.add(45);
-		System.out.println("list : " + list);
+		MyArrayList<String> list = new MyArrayList<String>(4, 4);
+		list.add("Html");
+		list.add("Java");
+		list.add("CSS");
+		list.add("JavaScript");
+		list.add("Python");
+
+		System.out.println(list.toString());
 		System.out.println("size : " + list.size());
-		
+		list.remove(1);
+		System.out.println(list.toString());
+		System.out.println("size : " + list.size());
 
 	}
 }
