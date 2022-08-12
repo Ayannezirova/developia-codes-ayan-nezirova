@@ -1,5 +1,6 @@
 package az.developia.student.springdemo;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
