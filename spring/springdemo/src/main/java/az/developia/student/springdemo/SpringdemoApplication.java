@@ -9,14 +9,13 @@ import esas_paket.components.sj;
 
 =======
 import az.developia.student.springdemo.esas_paket.components.Employee;
->>>>>>> ae5792bb3aec425c2dc05c356252f74bf1bedf71
 
 @SpringBootApplication
 public class SpringdemoApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext p = SpringApplication.run(SpringdemoApplication.class, args);
-<<<<<<< HEAD
+
 		Employee emp = p.getBean(Employee.class);
 		emp.printInfo();
 
@@ -24,7 +23,7 @@ public class SpringdemoApplication {
 		sj s = a.getBean(sj.class);
 		s.printInfo();
 		
-=======
+
 		Computer c = p.getBean(Computer.class);
 		System.out.println(c.brand);
 		System.out.println(c.speed);
@@ -33,7 +32,6 @@ public class SpringdemoApplication {
 		Employee emp = a.getBean(Employee.class);
 		emp.printInfo();
 
->>>>>>> ae5792bb3aec425c2dc05c356252f74bf1bedf71
 	}
 
 }
