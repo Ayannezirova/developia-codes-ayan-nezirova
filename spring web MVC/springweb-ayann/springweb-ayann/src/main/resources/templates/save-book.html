@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Yeni Kitab Qeydiyyatı</title>
+</head>
+<body>
+<a th:href="@{/books/list}">Geri qayıt</a>
+	<h4>Qeydiyyat üçün aşağıdakıları doldurun!</h4>
+		<div style="witdh:30%">
+		<form th:object="${books}" th:action="@{/books/save}" th:method="post" th:object="@{/book}">
+		<label for="book-name">Kitabın adı</label><br>
+		<input id="book-name" class="form-control" th:field="*{name}"><br>
+		
+		<label for="book-price">Kitabın qiyməti</label><br>
+		<input id="book-price" class="form-control" th:field="*{price}">
+		
+		<label for="book-language">Kitabın dili</label><br>
+		<input id="book-language" class="form-control" th:field="*{language}">
+		
+		<label for="book-author">Kitabın müəllifi</label><br>
+		<input id="book-author" class="form-control" th:field="*{author}">
+		
+		<input type="submit" value="Daxil et" class="btn btn-success">
+	</form>
+	</div>
+	
+	
+</body>
+</html>
