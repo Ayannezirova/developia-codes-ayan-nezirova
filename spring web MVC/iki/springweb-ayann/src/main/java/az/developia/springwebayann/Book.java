@@ -2,12 +2,12 @@ package az.developia.springwebayann;
 
 public class Book {
 
-	Integer id;
-	String name;
-	Double price;
-    String language;
-    String author;
-	
+	private Integer id;
+	private String name;
+	private Double price;
+	private String language;
+	private String[] authors;
+
 	public Book() {
 
 	}
@@ -17,8 +17,8 @@ public class Book {
 		this.id = id;
 		this.name = name;
 		this.price = price;
-		this.language=language;
-		this.author=author;
+		this.language = language;
+		this.authors = authors;
 	}
 
 	public Integer getId() {
@@ -54,13 +54,12 @@ public class Book {
 		this.language = language;
 	}
 
-	public String getAuthor() {
-		return author;
+	public String[] getAuthors() {
+		return authors;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setAuthors(String[] authors) {
+		this.authors = authors;
 	}
 
-	
 }
