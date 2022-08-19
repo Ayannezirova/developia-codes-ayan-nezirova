@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<title>Kitab qeydiyyatı</title>
+<style type="text/css">
+label {
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<h5>Kitab qeydiyyatı üçün aşağıdakıları doldurun!</h5>
+	<div style="width: 30%; margin: auto;">
+		<form th:action="@{/kitab/save}" th:method="post" th:object="${book}">
+			<label for="book-name">Name</label><br> 
+			<input id="book-name" th:field="*{name}" class="form-control">
+			<div  th:errors="*{name}" class="validation-error">
+			</div> 
+			
+			<label for="book-price">Price</label><br> 
+			<input id="book-price" th:field="*{price}" class="form-control">
+			
+			<label for="book-language">Language</label><br> 
+			<select id="book-language" th:field="*{language}" class="form-control">
+			<option th:each="lang : ${languages}" th:value="${lang}" th:text="${lang}"></option> <! dırnaq arasına istənilən şey yazıla bilər -->
+			
+			</select>
+			
+			<label>Authors</label><br> 
+			<span th:each="athr : ${athrs}">
+			<input type="checkbox" th:value="${athr}" th:field="*{authors}">
+			<span th:text="${athr}"></span><br>
+			</span><br>
+			
+			<input type="submit" value="Qeyd et" class="btn btn-success">
+		</form>
+	</div>
+
+</body>
+</html>
