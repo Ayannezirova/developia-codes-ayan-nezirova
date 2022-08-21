@@ -16,7 +16,7 @@
 <body>
 	<h2>Mağazada olan kitablar:</h2>
 	<form th:action="@{/kitab/search}">
-	<input name="s">
+		<input name="s">
 	</form>
 	<a th:href="@{/kitab/new}">Kitab qeydiyyatı</a>
 	<table class="table table-bordered table-hover table-striped">
@@ -25,6 +25,7 @@
 				<th>İd</th>
 				<th>Name</th>
 				<th>Price</th>
+				<th>Publish Date</th>
 				<th>Language</th>
 				<th>Authors</th>
 				<th>Operators</th>
@@ -32,20 +33,22 @@
 		</thead>
 		<tbody>
 			<tr th:each="book : ${kitab}">
-				<! book yerine istenilen sey qoyula biler -->
+				<!-- book yerine istenilen sey qoyula biler -->
 				<td th:text="${book.id}"></td>
 				<td th:text="${book.name}"></td>
 				<td th:text="${book.price}"></td>
-				<td th:text="${book.language}"></td>
-			
+				<td th:text="${book.publishDate}"></td>
+        		<td th:text="${book.language}"></td>
+
 				<td>
-				<ol>
-				<li th:each="a : ${book.authors}" th:text="${a}"></li>
-				</ol>
+					<ol>
+						<li th:each="a : ${book.authors}" th:text="${a}"></li>
+					</ol>
 				</td>
-				
-				
-				<td><a th:href="@{/kitab/{id}(id=${book.id})}" class="btn btn-danger">Delete</a></td>
+
+
+				<td><a th:href="@{/kitab/{id}(id=${book.id})}"
+					class="btn btn-danger">Delete</a></td>
 			</tr>
 		</tbody>
 	</table>

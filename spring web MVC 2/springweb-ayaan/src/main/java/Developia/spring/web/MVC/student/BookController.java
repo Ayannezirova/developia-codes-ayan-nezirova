@@ -22,11 +22,11 @@ public class BookController {
 
 	List<Book> bks = new ArrayList<Book>();
 	{
-		bks.add(new Book(1, "Qürur və qərəz", (double) 15));
-		bks.add(new Book(2, "Yad", (double) 10));
-		bks.add(new Book(3, "Yüz ilin tənhalığı", (double) 30));
-		bks.add(new Book(4, "Cəsur yeni dünya", (double) 20));
-		bks.add(new Book(5, "Korluq", (double) 25));
+		bks.add(new Book(1, "Qürur və qərəz", 15));
+		bks.add(new Book(2, "Yad", 10));
+		bks.add(new Book(3, "Yüz ilin tənhalığı", 30));
+		bks.add(new Book(4, "Cəsur yeni dünya", 20));
+		bks.add(new Book(5, "Korluq", 25));
 	}
 
 	@GetMapping(path = "/list")
@@ -94,8 +94,8 @@ public class BookController {
 	}
 
 	@PostMapping(path = "/save")
-	public String saveBook(@Valid @ModelAttribute(name = "bkks") Book book, BindingResult br) {
-	
+	public String saveBook(@Valid @ModelAttribute(name = "book") Book book, BindingResult br) {
+
 		if (br.hasErrors()) {
 			return "save-book";
 		}
