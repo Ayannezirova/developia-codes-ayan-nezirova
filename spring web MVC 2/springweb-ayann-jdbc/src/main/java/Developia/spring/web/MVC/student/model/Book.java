@@ -1,4 +1,4 @@
-package Developia.spring.web.MVC.student;
+package Developia.spring.web.MVC.student.model;
 
 import java.time.LocalDate;
 
@@ -22,12 +22,6 @@ import lombok.NoArgsConstructor;
 
 public class Book {
 
-	public Book(Integer id, String name, Integer price) {
-		this.id = id;
-		this.name = name;
-		this.price = price;
-	}
-
 	Integer id;
 
 	@NotBlank(message = "Kitab adı boş qoyulmamalıdır!")
@@ -41,20 +35,7 @@ public class Book {
 	@NotNull(message = "Kitab qiymeti mutleqdir")
 	Integer price;
 
-	String language;
-	String[] authors;
-
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@Past(message = "tevellud kecmis zamanda olmalidir")
-	// @Future(message = "tevellud gelecek zaman olmalidir")
-	LocalDate publishDate;
-
-	@DevelopiaLang(message = "Şifrə \"Developia\" ilə başlamalıdır!")
-	String password;
-
 	@Pattern(regexp = "[0-9]{3}-[0-9]{3}[0-9]{4}", message = "Telefonu düz yaz!")
 	Integer phone;
 
-	@Pattern(regexp = "[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-z]{2,4}", message = "Email düz yaz!")
-	String email;
 }

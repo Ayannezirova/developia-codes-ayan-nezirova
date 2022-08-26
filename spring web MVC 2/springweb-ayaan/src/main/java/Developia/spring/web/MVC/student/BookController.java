@@ -1,5 +1,6 @@
 package Developia.spring.web.MVC.student;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -55,7 +56,7 @@ public class BookController {
 	public String search(@RequestParam(name = "s") String st, Model model2) {
 		List<Book> books = new ArrayList<Book>();
 		for (Book b : this.bks) {
-			if (b.getName().contains(st)) {
+			if (b.getName().toLowerCase().contains(st.toLowerCase())) {
 				books.add(b);
 
 			}
@@ -100,6 +101,7 @@ public class BookController {
 			return "save-book";
 		}
 
+		book.setPublishDate(LocalDate.now());
 		book.setId(bks.size() + 1);
 		bks.add(book);
 		return "redirect:/kitab/list";

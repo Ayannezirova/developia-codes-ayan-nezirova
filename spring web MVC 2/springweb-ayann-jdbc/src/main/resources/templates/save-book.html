@@ -30,33 +30,10 @@ label {
 			<label for="book-price">Price</label><br> 
 			<input type="number" id="book-price" th:field="*{price}" class="form-control">
 			<div  style="color: red; font-weight: bold;" th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="validation-error"></div> 
-			
-			<label for="book-publishDate">Publish Date</label><br> 
-			<input type="date" id="book-publishDate" th:field="*{publishDate}" class="form-control">
-			<div  style="color: red; font-weight: bold;" th:if="${#fields.hasErrors('publishDate')}" th:errors="*{publishDate}" class="validation-error"></div> 
-			
-			<label for="book-language">Language</label><br> 
-			<select id="book-language" th:field="*{language}" class="form-control">
-			<option th:each="lang : ${languages}" th:value="${lang}" th:text="${lang}"></option> <!-- dırnaq arasına istənilən şey yazıla bilər -->
-			</select>
-			
-			<label for="book-password">Password</label><br> 
-			<input type="password" id="book-password" th:field="*{password}" class="form-control">
-			<div  style="color: red; font-weight: bold;" th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="validation-error"></div> 
-			
+				
 			<label for="book-phone">Phone</label><br> 
 			<input id="book-phone" th:field="*{phone}" class="form-control">
-			<div  style="color: red; font-weight: bold;" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="validation-error"></div> 
-			
-			<label for="book-email">Email</label><br> 
-			<input id="book-email" th:field="*{email}" class="form-control">
-			<div  style="color: red; font-weight: bold;" th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="validation-error"></div> 
-			
-			<label>Authors</label><br> 
-			<span th:each="athr : ${athrs}">
-			<input type="checkbox" th:value="${athr}" th:field="*{authors}">
-			<span th:text="${athr}"></span><br>
-			</span><br>
+			<div  style="color: red; font-weight: bold;" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="validation-error"></div> <br>
 			
 			<input type="submit" value="Qeyd et" class="btn btn-success">
 		</form>
