@@ -17,6 +17,7 @@ import Developia.spring.web.MVC.student.model.Book;
 @Repository
 
 //bazayla bir basa elaqede olan sinifdir.
+//baza emeliyyatlari repository-de g
 public class BookRepository {
 
 	@Autowired
@@ -29,7 +30,7 @@ public class BookRepository {
 
 			Connection conn = dataSource.getConnection();
 			Statement st = conn.createStatement();
-			ResultSet rs = st.executeQuery("select * from students");
+			ResultSet rs = st.executeQuery("select * from books");
 			while (rs.next()) {
 				Book bkk = new Book();
 				bkk.setId(rs.getInt("id"));
@@ -55,6 +56,21 @@ public class BookRepository {
 			st.setString(1, bkk.getName());
 			st.setInt(2, bkk.getPrice());
 			st.setInt(3, bkk.getPhone());
+
+			st.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void deletedId(Integer bookId) {
+
+		try (Connection conn = dataSource.getConnection()) {
+
+			PreparedStatement st = conn.prepareStatement("delete from books where id=?");
+			st.setInt(1, bookId);
 
 			st.executeUpdate();
 

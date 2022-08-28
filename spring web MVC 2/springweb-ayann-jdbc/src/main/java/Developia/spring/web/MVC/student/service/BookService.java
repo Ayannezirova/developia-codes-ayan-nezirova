@@ -16,10 +16,19 @@ public class BookService {
 	BookRepository bookRepository;
 
 	public List<Book> findThemAll() {
+		//List<Book> l=bookRepository.findAll();
+		//int j=0
+		//for(Book bkss:l){j++; bkss.setCounter(j);}
+		
 		return bookRepository.findAll();
 	}
 
 	public void save(Book b) {
 		bookRepository.save(b);
 	}
+
+	public void deletedId(Integer bookId) {
+		bookRepository.deletedId(bookId);
+	}
+
 }

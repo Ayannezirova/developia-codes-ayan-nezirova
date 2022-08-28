@@ -1,18 +1,12 @@
 package Developia.spring.web.MVC.student.model;
 
-import java.time.LocalDate;
-
-import javax.validation.constraints.Future;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,7 +29,8 @@ public class Book {
 	@NotNull(message = "Kitab qiymeti mutleqdir")
 	Integer price;
 
-	@Pattern(regexp = "[0-9]{3}-[0-9]{3}[0-9]{4}", message = "Telefonu düz yaz!")
+	//@Pattern(regexp = "[0-9]{3}-[0-9]{3}-[0-9]{4}", message = "Telefonu düz yaz!")
 	Integer phone;
 
+	//Integer counter;
 }

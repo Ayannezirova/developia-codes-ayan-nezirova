@@ -36,7 +36,8 @@ public class BookController {
 
 	@GetMapping(path = "/{id}")
 	public String delete(@PathVariable Integer id) {
-
+		bookService.deletedId(id);
+		
 		return "redirect:/kitab/list";
 	}
 
