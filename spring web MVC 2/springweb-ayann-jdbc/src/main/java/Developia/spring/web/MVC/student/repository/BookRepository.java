@@ -17,7 +17,7 @@ import Developia.spring.web.MVC.student.model.Book;
 @Repository
 
 //bazayla bir basa elaqede olan sinifdir.
-//baza emeliyyatlari repository-de g
+//baza emeliyyatlari repository-de aparılır
 public class BookRepository {
 
 	@Autowired
