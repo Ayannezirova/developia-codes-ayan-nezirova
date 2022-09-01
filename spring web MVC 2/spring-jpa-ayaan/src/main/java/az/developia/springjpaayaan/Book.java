@@ -36,6 +36,6 @@ public class Book {
 	@Max(value = 40, message = "Kitabın qiyməti maximum 40 olmalıdır!")
 	@Min(value = 10, message = "Kitabın qiyməti minimum 10 olmalıdır!")
 	@NotNull(message = "Kitab qiymeti mutleqdir")
-	Integer price;
+	String price;
 
 }
