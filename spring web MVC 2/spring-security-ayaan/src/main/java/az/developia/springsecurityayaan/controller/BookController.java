@@ -3,13 +3,16 @@ package az.developia.springsecurityayaan.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -67,6 +70,7 @@ public class BookController {
 			return "save-book";
 		}
 
+		book.setName(book.getName().trim());
 		bookRepository.save(book);
 
 		return "redirect:/kitab/list";
@@ -76,5 +80,12 @@ public class BookController {
 	public String handleAccessDeniedException(AccessDeniedException exc, Model model4) {
 		model4.addAttribute("message", "hüququn yoxdur");
 		return "errorumuz";
+	}
+
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		StringTrimmerEditor editor = new StringTrimmerEditor(false);// true-bos setirleri null-a cevirir.
+																	// false- bos setirleri oldugu kimi qeyd edir.
+		binder.registerCustomEditor(String.class, editor);
 	}
 }

@@ -23,9 +23,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.jdbcAuthentication().dataSource(ds);
 	}
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/h2-console/**").permitAll().anyRequest().authenticated();
-	}
-
+	/*
+	 * @Override protected void configure(HttpSecurity http) throws Exception {
+	 * http.authorizeRequests().antMatchers("/h2-console/**").permitAll().anyRequest
+	 * ().authenticated(); }
+	 */
 }
