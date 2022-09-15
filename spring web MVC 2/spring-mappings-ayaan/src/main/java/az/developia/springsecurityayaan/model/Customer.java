@@ -31,5 +31,5 @@ public class Customer {
 
 	@OneToMany(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "customer_id")
-	List<Order> ord = new ArrayList<Order>();
+	List<Order> orders = new ArrayList<Order>();
 }

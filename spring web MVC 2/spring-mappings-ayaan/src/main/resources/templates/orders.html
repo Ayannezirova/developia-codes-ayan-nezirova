@@ -16,5 +16,26 @@
 </head>
 <body>
 	<h2>Sifarisler</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Kod</th>
+				<th>Ad</th>
+				<th>Sifarişləri</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="c : ${customers}">
+				<td th:text="${c.id}"></td>
+				<td th:text="${c.name}"></td>
+				<td>
+					<ol>
+						<li th:each="o : ${c.orders}" th:text="${o.address}"></li>
+					</ol>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
