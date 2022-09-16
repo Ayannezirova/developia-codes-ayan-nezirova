@@ -23,6 +23,7 @@ public class Customer {
 
 	String name;
 	String surname;
-	Integer age;
+	Integer age; 
+	
 
 }

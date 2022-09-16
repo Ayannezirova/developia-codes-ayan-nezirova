@@ -31,6 +31,7 @@ public class CustomerRestController {
 
 	@PostMapping
 	public void addCustomer(@RequestParam Customer customer) {
+	
 		customerRepository.save(customer);
 	}
 
