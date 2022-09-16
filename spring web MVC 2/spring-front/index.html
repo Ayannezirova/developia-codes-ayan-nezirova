@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>customer save</title>
+</head>
+<body>
+	<form onsubmit="saveCustomer(event)">
+<label>Ad<label><br>
+<input id="name"><br>
+
+<label>Soyad<label><br>
+<input id="surname"><br>
+
+<label>Yas<label><br>
+<input id="age"><br>
+<input type="submit" value="Yadda saxla"><br>
+                </form>
+<script>
+function saveCustomer(event){
+event.preventDefault();
+
+let customerName=document.getElementByIy('name').value;
+let customerSurname=document.getElementByIy('surname').value;
+let customerAge=document.getElementByIy('age').value;
+let customerObject={name:customerName,surname:customersurname,age:Number(customerAge)};
+let json=JSON.stringify(customerObject);
+
+let http=new XMLHttpRequest();
+http.open("POST","http://localhost:6606/customers",true);
+http.setRequestHeader('content-type','application/json');
+http.send(json);
+
+}
+
+</script>
+</body>
+</html>
