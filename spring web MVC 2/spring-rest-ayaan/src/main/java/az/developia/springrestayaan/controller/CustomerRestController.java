@@ -7,6 +7,8 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import az.developia.springrestayaan.exception.MyValidationException;
@@ -48,12 +51,13 @@ public class CustomerRestController {
 		customerRepository.save(customer);
 	}
 
-	@GetMapping
+	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
 	public List<Customer> findAll() {
 		return customerRepository.findAll();
 	}
 
 	@DeleteMapping(path = "/{id}")
+
 	public void deleteById(@PathVariable(name = "id") Integer customerId) {
 		customerRepository.deleteById(customerId);
 	}
@@ -61,7 +65,20 @@ public class CustomerRestController {
 	@PutMapping // @RequestBody ile isleyir
 	// @ResponseStatus(code = HttpStatus.OK)
 	public void update(@RequestBody Customer customer) {
-		customerRepository.save(customer);
+
+		Integer id = customer.getId();
+		if (id == null) {
+			System.out.println("İd gəlmədi");
+		} else {
+			Boolean customerIsExists = customerRepository.findById(id).isPresent();
+			if (customerIsExists) {
+				customerRepository.save(customer);
+			} else {
+				System.out.println("" + id + "tapılmadı");
+			}
+
+		}
+
 	}
 
 	// rest pagination
@@ -74,6 +91,7 @@ public class CustomerRestController {
 	}
 
 	@ExceptionHandler
+	@ResponseStatus(code = HttpStatus.BAD_REQUEST)
 	public List<String> handleMyValidationException(MyValidationException exc) {
 		BindingResult br = exc.getBr();
 
