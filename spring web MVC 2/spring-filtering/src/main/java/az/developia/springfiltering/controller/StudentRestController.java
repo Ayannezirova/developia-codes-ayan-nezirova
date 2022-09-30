@@ -3,6 +3,7 @@ package az.developia.springfiltering.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,8 @@ public class StudentRestController {
 
 	@Autowired
 	public StudentRepository studentRepository;
+
+	ModelMapper mapper = new ModelMapper();
 
 	@GetMapping(path = "/{id}")
 	public Student get(@PathVariable Integer id) {
@@ -42,9 +45,7 @@ public class StudentRestController {
 		List<StudentDTO> studentDtos = new ArrayList<StudentDTO>();
 		for (Student st : students) {
 			StudentDTO dto = new StudentDTO();
-			dto.setId(st.getId());
-			dto.setName(st.getName());
-			dto.setSurname(st.getSurname());
+			mapper.map(st, dto);
 			studentDtos.add(dto);
 		}
 
