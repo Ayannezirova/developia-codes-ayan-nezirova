@@ -1,5 +1,6 @@
 package az.developia.springfiltering.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import az.developia.springfiltering.dto.StudentDTO;
 import az.developia.springfiltering.model.Student;
 import az.developia.springfiltering.repository.StudentRepository;
 
@@ -33,10 +35,19 @@ public class StudentRestController {
 	}
 
 	@GetMapping(path = "/for-student")
-	public List<Student> findAllForStudent() {
+	public List<StudentDTO> findAllForStudent() {
 
 		List<Student> students = studentRepository.findAll();
 
- 		return students;
+		List<StudentDTO> studentDtos = new ArrayList<StudentDTO>();
+		for (Student st : students) {
+			StudentDTO dto = new StudentDTO();
+			dto.setId(st.getId());
+			dto.setName(st.getName());
+			dto.setSurname(st.getSurname());
+			studentDtos.add(dto);
+		}
+
+		return studentDtos;
 	}
 }
