@@ -1,0 +1,42 @@
+package az.developia.springfiltering.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import az.developia.springfiltering.model.Student;
+import az.developia.springfiltering.repository.StudentRepository;
+
+@RestController
+@RequestMapping(path = "/students")
+@CrossOrigin(origins = "*")
+public class StudentRestController {
+
+	@Autowired
+	public StudentRepository studentRepository;
+
+	@GetMapping(path = "/{id}")
+	public Student get(@PathVariable Integer id) {
+		Student s = studentRepository.findById(id).get();
+
+		return s;
+	}
+
+	@GetMapping
+	public List<Student> findAll() {
+		return studentRepository.findAll();
+	}
+
+	@GetMapping(path = "/for-student")
+	public List<Student> findAllForStudent() {
+
+		List<Student> students = studentRepository.findAll();
+
+ 		return students;
+	}
+}
