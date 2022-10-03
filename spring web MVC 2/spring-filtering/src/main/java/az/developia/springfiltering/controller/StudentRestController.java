@@ -23,7 +23,8 @@ public class StudentRestController {
 	@Autowired
 	public StudentRepository studentRepository;
 
-	ModelMapper mapper = new ModelMapper();
+	@Autowired
+	ModelMapper mapper;
 
 	@GetMapping(path = "/{id}")
 	public Student get(@PathVariable Integer id) {
