@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/files")
 @CrossOrigin(origins = "*")
 public class FileRestController {
-
+ 
 }
