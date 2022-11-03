@@ -30,7 +30,7 @@ import az.developia.springrestayaan.repository.CustomerRepository;
 @RestController
 @RequestMapping(path = "/customers")
 @CrossOrigin(origins = "*")
-@Profile("dev")
+//@Profile("dev")
 public class CustomerRestController {
 
 	@Autowired
