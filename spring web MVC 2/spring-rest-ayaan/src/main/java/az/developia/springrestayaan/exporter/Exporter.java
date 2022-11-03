@@ -1,19 +1,6 @@
-package az.developia.springrestayaan;
+package az.developia.springrestayaan.exporter;
 
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
-
-@Service
-public class MyScheduler {
-
-	@Scheduled(fixedRate = 5000)
-	public void doItPeriodically() {
-		// System.out.println("hello");
-	}
-
-	void bazaniExportEt() {
-
-	}
+public class Exporter {
 
 	// dumpPath - mysql bazanı export eden, mysql qurulanda ustunde hazir gelen
 	// proqramin linkidir
@@ -27,7 +14,7 @@ public class MyScheduler {
 		try {
 			Runtime runtime = Runtime.getRuntime();
 			p = runtime.exec(
-					dumpPath + " -u" + username + "-p" + pass + "--add-drop-database -B" + dbName + "-r" + sqlPath);
+					dumpPath + " -u" + username + " -p" + pass + " --add-drop-database -B" + dbName + " -r" + sqlPath);
 			int completed = p.waitFor();
 			if (completed == 0) {
 				System.out.println("success export --" + dbName);
