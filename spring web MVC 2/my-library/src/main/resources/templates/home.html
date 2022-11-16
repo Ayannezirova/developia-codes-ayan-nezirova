@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Ana səhifə</title>
+
+<link rel="stylesheet" th:href="@{/home.css}">
+
+<style>
+#new-students-button {
+	display: block;
+	padding: 5px 10px;
+	background-color: yellow;
+	width: 200px;
+	text-align: center;
+	border-radius: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-decoration: none;
+}
+
+#new-students-button:hover {
+	background-color: #eec900;
+	cursor: pointer
+}
+
+#new-books-button {
+	display: block;
+	padding: 5px 10px;
+	background-color: orange;
+	width: 200px;
+	text-align: center;
+	border-radius: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-decoration: none;
+}
+
+#new-books-button:hover {
+	background-color: #cd6839;
+	cursor: pointer
+}
+
+#new-users-button {
+	display: block;
+	padding: 5px 10px;
+	background-color: #00cd00;
+	width: 200px;
+	text-align: center;
+	border-radius: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-decoration: none;
+}
+
+#new-users-button:hover {
+	background-color: #458b00;
+	cursor: pointer
+}
+
+#logout-button {
+	display: block;
+	padding: 5px 10px;
+	background-color: red;
+	width: 200px;
+	text-align: center;
+	border-radius: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-decoration: none;
+}
+
+#logout-button:hover {
+	background-color: maroon;
+	cursor: pointer
+}
+</style>
+</head>
+<body>
+
+	<h1>Ana səhifə</h1>
+	<a th:href="@{/students/list}" id="new-students-button">Tələbələr</a>
+
+	<a th:href="@{/books/list}" id="new-books-button">Kitablar</a>
+
+	<a th:href="@{/users/new}" id="new-users-button">Yeni istifadəçi
+		yarat</a>
+	<a th:href="@{/logout}" id="logout-button">Çıxış</a>
+</body>
+</html>

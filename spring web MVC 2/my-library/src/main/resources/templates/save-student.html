@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script 
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Css qosuldu -->
+<link rel="stylesheet" th:href="@{/students.css}">
+
+<title>Yeni tələbə</title>
+<style type="text/css">
+label {
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<h4>Yeni tələbə qeydiyyat formu</h4>
+	<div style="width: 30%; margin: auto;">
+		<form th:action="@{/students/save}" th:method="post" th:object="${student}">
+			
+			<input type="hidden" th:field="*{id}">
+			
+			<label for="student-name">Ad</label><br> 
+			<input id="student-name" th:field="*{name}" class="form-control">
+			<div  style="color: red; font-weight: bold;" th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="validation-error"></div> 
+			
+			<label for="student-surname">Soyad</label><br> 
+			<input id="student-surname" th:field="*{surname}" class="form-control">
+			<div  style="color: red; font-weight: bold;" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}" class="validation-error"></div> 
+						
+			<label for="student-telephone">Telefon</label><br> 
+			<input id="student-telephone" th:field="*{telephone}" class="form-control">
+			<div  style="color: red; font-weight: bold;" th:if="${#fields.hasErrors('telephone')}" th:errors="*{telephone}" class="validation-error"></div> 
+			
+			<label for="student-address">Ünvan</label><br> 
+			<input id="student-address" th:field="*{address}" class="form-control">
+			<div  style="color: red; font-weight: bold;" th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="validation-error"></div> 
+			
+			<label for="student-username">İstifadəçi adı</label><br> 
+			<input id="student-username" th:field="*{username}" class="form-control">
+			<div  style="color: red; font-weight: bold;" th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="validation-error"></div> 
+			
+			<label for="student-password">Şifrə</label><br> 
+			<input type="password" id="student-password" th:field="*{password}" class="form-control">
+			<div  style="color: red; font-weight: bold;" th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="validation-error"></div> 
+			
+			<hr>
+			
+			<input type="submit" value="Qeyd et" class="btn btn-success">
+		</form>
+	</div>
+
+</body>
+</html>
